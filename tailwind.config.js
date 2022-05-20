@@ -12,7 +12,7 @@ module.exports = {
         rubik:['Rubik', 'sans-serif']
       },
       colors:{
-        'primary':'#fab274',
+        'primary':'#fa8274',
         'secondary':'#6e483a',
         'tertiary':'#be9c90',
         'last':'#fff5ee'
