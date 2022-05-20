@@ -3,16 +3,18 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import axios from 'axios'
 import { useEffect } from 'react'
-
-const APP_ID='92c6ad4a'
-const APP_KEY='cc57541f5f045e568cc701051f57b2b3'
-const URL=`https://api.edamam.com/search?=chicken&app_id=${APP_ID}&app_key=${APP_KEY}`
-export async function getStaticProps(context) {
- const response=await axios.get(URL)
- console.log(response.data)
+ const API_KEY="0ef6a2baae594f999fcb22462fe8a649"
+ 
+  const URL= `https://api.spoonacular.com/recipes/complexSearch?query=vegetable&number=20&apiKey=${API_KEY}`
+export async function getServerSideProps(context) {
+ const response= await axios.get(URL)
+ console.log(response.data.results)
+ 
  return{
    props:{
-     tosiron:response.data
+ 
+ responses:response.data.results
+  
    }
  }
 
@@ -20,15 +22,8 @@ export async function getStaticProps(context) {
 
  
 
-export default function Home(tosiron) {
-useEffect(() => {
-  const fetch=async ()=>{
-    const res=await axios.get(URL)
-    console.log(res)
-  }
-
-   
-}, [ ])
+export default function Home({responses}) {
+ 
 
   
   return (
@@ -40,11 +35,18 @@ useEffect(() => {
       </Head>
 
        <div className='font-custom '>
-         {/* {tosiron.map((item)=>{
+         {responses.map((item)=>{
            return(
-             div
+             <div className='bg-last'>
+             <p className='font-frank text-primary'>Helloo</p>
+             <p className='font-rubik text-secondary'>Hellooo</p>
+             <p className='font-rubik text-tertiary'>Hellooo</p>
+             <p className='font-rubik text-last'>Hellooo</p>
+              <li>{item.title}</li>
+              <img src={item.image} alt="" />
+              </div>
            )
-         })} */}
+         })}
          hello world
        </div>
     </div>
