@@ -27,7 +27,7 @@ export const Navigation = () => {
           </a>
         </Link>
         <button
-          className=' inline-flex p-3 rounded lg:hidden text-secondary ml-auto hover:text-secondary outline-none'
+          className=' inline-flex p-3 rounded lg:hidden text-secondary ml-auto hover:text-primary  outline-none'
           onClick={handleClick}
         >
            
@@ -41,22 +41,22 @@ export const Navigation = () => {
         >
           <div className='lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto'>
             <Link href='/'>
-              <a className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-secondary font-bold items-center justify-center hover:text-secondary '>
+              <a className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-secondary hover:text-primary font-bold items-center justify-center   '>
                 Home
               </a>
             </Link>
-            <Link href='/'>
-              <a className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-secondary font-bold items-center justify-center hover:text-secondary'>
-                Services
+            <Link href='/Results'>
+              <a className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-secondary hover:text-primary font-bold items-center justify-center  '>
+               Results
               </a>
             </Link>
             <Link href='/'>
-              <a className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-secondary font-bold items-center justify-center hover:text-secondary'>
+              <a className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-secondary hover:text-primary font-bold items-center justify-center  '>
                 About us
               </a>
             </Link>
             <Link href='/'>
-              <a className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-secondary font-bold items-center justify-center hover:text-secondary'>
+              <a className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-secondary hover:text-primary font-bold items-center justify-center  '>
                 Contact us
               </a>
             </Link>
