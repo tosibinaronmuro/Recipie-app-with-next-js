@@ -5,3 +5,15 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+.not-found {
+    display: flex;
+    
+    flex-direction: column;
+    text-align: center;
+    height: 60vh;
+  }
+  .not-found a {
+    /* text-decoration: underline; */
+    color: #4979ff;
+  }
