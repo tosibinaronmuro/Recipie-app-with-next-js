@@ -8,7 +8,7 @@ import { useEffect } from 'react'
   const URL= `https://api.spoonacular.com/recipes/complexSearch?query=vegetable&number=20&apiKey=${API_KEY}`
 export async function getServerSideProps(context) {
  const response= await axios.get(URL)
- console.log(response.data.results)
+ console.log(sponse.data.resultsre)
  
  return{
    props:{
