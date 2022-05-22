@@ -29,10 +29,10 @@ function Login() {
     setLoading(false);
   }
   return (
-    <div className=" flex justify-center items-center bg-last">
+    <div className="h-screen flex justify-center items-center bg-last">
       <form
         onSubmit={handleSubmit}
-        className="w-full m-14 rounded-lg bg-white lg:w-96 md:w-96 h-auto border-2 p-5 shadow-md"
+        className="w-full m-14 mt-5 rounded-lg bg-white lg:w-96 md:w-96 h-auto border-2 p-5 shadow-xl"
       >
         <p className="flex justify-center font-frank text-secondary items-center text-2xl">Login</p>
         {/* display error banner */}
@@ -70,34 +70,35 @@ function Login() {
             ref={passwordref}
           ></input>
         </div>
-        {/* <Link
-          to="/forgot-password"
-          className="text-sm flex justify-center items-center mb-4"
-        >
-          forgot password?
-        </Link> */}
-        <div className="flex items-start mb-6">
-          <div className="flex items-center h-5">
-            <p className="ml-2 text-sm font-medium  text-secondary  ">
-              don't have an account?{" "}
-             <Link href='/Signup' ><span
-                
-                className="text-blue-600 hover:underline dark:text-blue-500"
-              >
-                sign up
-              </span></Link>
-            </p>
-          </div>
-        </div>
         <div className="flex justify-center">
           <button
             disabled={loading}
             type="submit"
-            className="p-2.5 ml-2 w-44 text-sm font-medium text-white bg-primary rounded-lg border border-primary hover:bg-primary focus:ring-4 focus:outline-none focus:ring-primary hover:shadow-xl"
+            className="p-2.5 mb-5 ml-2 w-44 text-sm font-medium text-white bg-primary rounded-lg border border-primary hover:bg-primary focus:ring-4 focus:outline-none focus:ring-primary hover:shadow-xl"
           >
             Login
           </button>
         </div>
+        <Link
+          href="/ForgotPassword"
+         
+        >
+         <span  className="text-sm flex text-tertiary justify-center items-center ">forgot password?</span> 
+        </Link>
+        <div className="flex   mb-6">
+          <div className="flex  h-5">
+            <p className=" text-sm font-medium flex justify-center items-center text-secondary ml-20  ">
+              don't have an account?   
+              <Link href='/Signup' ><span
+                
+                className="text-blue-600 hover:underline dark:text-blue-500"
+              >
+                    sign-up
+              </span></Link>
+            </p>
+          </div>
+        </div>
+        
       </form>
     </div>
   );

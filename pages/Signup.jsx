@@ -34,8 +34,8 @@ setLoading(false)
 }
 
   return (
-    <div className=' flex justify-center items-center bg-last '>
-<form onSubmit={handleSubmit} className=' w-full bg-white rounded-lg m-14 lg:m-14 lg:w-96 md:w-96 h-auto border-2 p-5 shadow-md'>
+    <div className='h-screen flex justify-center items-center bg-last '>
+<form onSubmit={handleSubmit} className=' w-full mt-5 bg-white rounded-lg m-14 lg:m-14 lg:w-96 md:w-96 h-auto border-2 p-5 shadow-md'>
 <p className='flex justify-center font-frank items-center text-secondary text-2xl'>Sign Up</p>
   {error && <Error error={error}/> }
    
@@ -48,7 +48,7 @@ setLoading(false)
 <input type="password" id="password" className="bg-white border border-primary text-secondary text-sm rounded-full focus:ring-primary focus:border-primary hover:shadow-xl block w-full pl-10 p-2.5 placeholder-secondary"  placeholder="Create password" required="" ref={passwordref}></input>
 </div>
 <div className="mb-6">
-<label htmlFor="repeat-password" className="block text-secondary font-rubik mb-2 text-sm font-medium    ">Repeat password</label>
+<label htmlFor="repeat-password" className="block text-secondary font-rubik mb-2 text-sm font-medium    ">Confirm password</label>
 <input type="password" id="repeat-password" className="bg-white border border-primary text-secondary text-sm rounded-full focus:ring-primary focus:border-primary hover:shadow-xl block w-full pl-10 p-2.5 placeholder-secondary"  placeholder="Confirm password" required="" ref={confirmpasswordref}></input>
 </div>
 <div className="flex items-start mb-6">
