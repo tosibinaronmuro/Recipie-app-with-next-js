@@ -50,12 +50,12 @@ export const Navigation = () => {
                Results
               </a>
             </Link>
-            <Link href='/'>
+            <Link href='/Signup'>
               <a className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-secondary hover:text-primary font-bold items-center justify-center  '>
                 About us
               </a>
             </Link>
-            <Link href='/'>
+            <Link href='/Login'>
               <a className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-secondary hover:text-primary font-bold items-center justify-center  '>
                 Contact us
               </a>
