@@ -2,32 +2,49 @@ import React from "react";
 import { useEffect, useRef, useState } from "react";
 import DisplayResults from "../Component/DisplayResults";
 import axios from "axios";
-import {useAuth} from '../Component/Layout'
+import { useAuth } from "../Component/Layout";
+import Pagination from "../Component/Pagination";
 
 function Results() {
   const searchref = useRef(null);
   const [search, setSearch] = useState("chicken");
-  const [data,setdata]=useState()
-  const {searchrender,setsearchrender}=useAuth()
+  const [data, setdata] = useState();
+  const { searchrender, setsearchrender } = useAuth();
+  const [number, setNmber] = useState(10);
+  const [offset,setoffset]=useState(0)
+  const handleIncrease = (e) => {
+    setNmber(prev=>prev+10)
+    setoffset(prev=>prev+10)
+    console.log(number,offset)
+  };
+  const handleDecrease = (e) => {
+    if(number>10){setNmber(prev=>prev-10)
+    setoffset(prev=>prev-10)}
+    console.log(number,offset)
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
-    setsearchrender(true)
+    setsearchrender(true);
     setSearch(searchref.current.value);
-    searchref.current.value=''
+    searchref.current.value = "";
   };
   useEffect(() => {
     const API_KEY = "0ef6a2baae594f999fcb22462fe8a649";
-    const URL = `https://api.spoonacular.com/recipes/complexSearch?query=${search}&number=10&apiKey=${API_KEY}`;
+    const URL = `https://api.spoonacular.com/recipes/complexSearch?query=${search}&number=${number}&offset=${offset}&apiKey=${API_KEY}`;
 
     async function fetchData() {
-      const response = await axios.get(URL);
-      const recipe = response.data.results;
-      // console.log(recipe);
-      setdata(recipe)
+      try {
+        const response = await axios.get(URL);
+        const recipe = response.data.results;
+        setdata(recipe);
+      } catch (error) {
+        console.log(error);
+      }
+   
     }
 
     fetchData();
-  }, [search]);
+  }, [search,offset,number]);
   return (
     <div className="bg-last min-h-screen">
       <form
@@ -81,7 +98,10 @@ function Results() {
           </svg>
         </button>
       </form>
-     {searchrender &&  <DisplayResults searchResults={search} recipeData={data} />}
+      {searchrender && (
+        <DisplayResults searchResults={search} recipeData={data} />
+      )}
+      <Pagination increase={handleIncrease} decrease={handleDecrease} />
     </div>
   );
 }

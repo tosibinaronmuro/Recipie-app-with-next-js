@@ -11,7 +11,7 @@ function DisplayResults({searchResults,recipeData}) {
         <div className=' pt-3 lg:p-5 rounded-lg flex flex-wrap justify-center bg-white'>
           {recipeData.map((item)=>{
             return  (
-              <ul key={item.id}><FoodCard image={item.image} title={item.title}/></ul>
+              <ul key={item.id}><FoodCard id={item.id} image={item.image} title={item.title}/></ul>
             )
              
           })}

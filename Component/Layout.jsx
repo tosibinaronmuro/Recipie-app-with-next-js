@@ -20,6 +20,7 @@ function Layout({children}) {
 
   const [currentUser, setCurrentUser] = useState();
   const [searchrender,setsearchrender]=useState(false)
+  const [recipeID,setRecipeID]=useState(0)
   // signup with firebase
   function signup(email, password) {
     return createUserWithEmailAndPassword(auth, email, password);
@@ -59,7 +60,7 @@ function Layout({children}) {
     login,
     logout,
     resetPassword,
-    searchrender,setsearchrender
+    searchrender,setsearchrender,recipeID,setRecipeID
   };
   return (
     < > 
