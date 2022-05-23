@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { useAuth } from "../Component/Layout";
 import Link from 'next/link'
+import Head from "next/head";
 // import { useNavigate } from "react-router-dom";
 import Error from "./Error";
 import Message from "./Message";
@@ -30,6 +31,11 @@ function ForgotPassword() {
     setLoading(false);
   }
   return (
+    <>
+    <Head>
+    <title>{"Tosiron's recipe | Forgot-Password"}</title>
+    <meta name="keywords" content="Tosiron" />
+  </Head>
     <div className="h-screen flex justify-center items-center bg-last flex-col">
       <form
         onSubmit={handleSubmit}
@@ -92,6 +98,7 @@ function ForgotPassword() {
         </p>
       </div>
     </div>
+    </>
   );
 }
 

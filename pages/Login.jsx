@@ -3,6 +3,7 @@ import { useAuth } from "../Component/Layout";
 // import { useNavigate, Link } from "react-router-dom";
 import { useRouter } from 'next/router';
 import Link from 'next/link'
+import Head from "next/head";
 import Error from "./Error";
 function Login() {
   const router = useRouter();
@@ -31,6 +32,11 @@ function Login() {
     setLoading(false);
   }
   return (
+    <>
+     <Head>
+        <title>{"Tosiron's recipe | Login"}</title>
+        <meta name="keywords" content="Tosiron" />
+      </Head>
     <div className="h-screen flex justify-center items-center bg-last">
       <form
         onSubmit={handleSubmit}
@@ -103,6 +109,7 @@ function Login() {
         
       </form>
     </div>
+    </>
   );
 }
 

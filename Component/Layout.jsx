@@ -3,24 +3,25 @@ import { auth } from "./Firebase";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  signOut,getAuth,
+  signOut,
+  getAuth,
   sendPasswordResetEmail,
 } from "firebase/auth";
-import Footer from './Footer'
-import { Navigation } from './Navigation'
- 
+import Footer from "./Footer";
+import { Navigation } from "./Navigation";
+
 const AuthContext = createContext();
 
 export const useAuth = () => {
   return useContext(AuthContext);
 };
 
-function Layout({children}) {
+function Layout({ children }) {
   const [loading, setLoading] = useState(true);
 
   const [currentUser, setCurrentUser] = useState();
-  const [searchrender,setsearchrender]=useState(false)
-  const [recipeID,setRecipeID]=useState(0)
+  const [searchrender, setsearchrender] = useState(false);
+  const [recipeID, setRecipeID] = useState(0);
   // signup with firebase
   function signup(email, password) {
     return createUserWithEmailAndPassword(auth, email, password);
@@ -48,10 +49,10 @@ function Layout({children}) {
 
     const unsubscribe = auth.onAuthStateChanged((user) => {
       setCurrentUser(user);
-     
+
       setLoading(false);
     });
-    return ()=> unsubscribe() ;
+    return () => unsubscribe();
   }, []);
   // the global props and states needed for auth
   const value = {
@@ -60,25 +61,23 @@ function Layout({children}) {
     login,
     logout,
     resetPassword,
-    searchrender,setsearchrender,recipeID,setRecipeID
+    searchrender,
+    setsearchrender,
+    recipeID,
+    setRecipeID,
   };
   return (
-    < > 
-    <AuthContext.Provider value={value}>
-    <Navigation/>
-    
-      {/* {!loading && children} */}
-      {children}
- 
-    <Footer/>
-    </AuthContext.Provider>
+    <>
+      <AuthContext.Provider value={value}>
+        <Navigation />
+
+        {/* {!loading && children} */}
+        {children}
+
+        <Footer />
+      </AuthContext.Provider>
     </>
-  )
+  );
 }
 
-export default Layout
- 
-
- 
-
- 
+export default Layout;
