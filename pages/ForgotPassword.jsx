@@ -33,7 +33,7 @@ function ForgotPassword() {
     <div className="h-screen flex justify-center items-center bg-last flex-col">
       <form
         onSubmit={handleSubmit}
-        className="w-auto mt-5   lg:w-96 bg-white rounded-lg m-14 mb-2 md:w-96 h-auto border-2 p-5 shadow-md"
+        className="w-auto mt-5   lg:w-96 bg-white rounded-lg m-14 mb-2 md:w-96 h-auto border-2 p-5 shadow-xl"
       >
         <p className="flex justify-center items-center m-5 text-secondary font-frank text-2xl">
           Reset Password

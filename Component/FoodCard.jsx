@@ -2,7 +2,7 @@ import React from "react";
 
 function FoodCard() {
   return (
-    <div className="bg-last w-96 h-auto rounded-lg ">
+    <div className="bg-last w-44 lg:w-80 h-auto m-2 rounded lg:rounded-lg ">
       <div className="p-3 flex justify-between">
         <p className="font-frank text-secondary text-xl bg-white ">title</p>
         <button className="rounded-full   bg-primary w-8 h-8 flex justify-center items-center hover:bg-primary focus:ring-4 focus:outline-none focus:ring-primary hover:shadow-xl">
@@ -43,7 +43,7 @@ function FoodCard() {
 
         
       </div>
-      <div className="rounded-b-lg"><img className="rounded-b-lg "   src="http://1.bp.blogspot.com/--sbXcXkwXm4/Tl2TtJMBdNI/AAAAAAAABoQ/jixOrvcb1ys/s1600/IMAG0009.jpg" alt="" /></div>
+      <div className="lg:rounded-b-lg"><img className=" rounded lg:rounded-b-lg "   src="http://1.bp.blogspot.com/--sbXcXkwXm4/Tl2TtJMBdNI/AAAAAAAABoQ/jixOrvcb1ys/s1600/IMAG0009.jpg" alt="" /></div>
     </div>
   );
 }

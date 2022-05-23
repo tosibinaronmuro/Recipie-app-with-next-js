@@ -2,6 +2,7 @@
 import React ,{useRef, useState} from 'react'
 import { useAuth } from '../Component/Layout'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 // import { useNavigate } from 'react-router-dom'
 import Error from './Error'
 
@@ -11,7 +12,7 @@ const passwordref=useRef(null)
 const confirmpasswordref=useRef(null)
 const [error,seterror]=useState('')
 const [loading,setLoading]=useState(false)
-// const navigate=useNavigate()
+const router=useRouter()
 
  const {signup}=useAuth()
  async function handleSubmit(e){
@@ -24,18 +25,20 @@ try{
   setLoading(true)
 
   signup(emailref.current.value,passwordref.current.value)
-  // navigate('/')
+   router.push('/Login')
    
   
  }
- catch{ seterror('failed to create an account')}
+ catch{ seterror('failed to create an account')
+ 
+}
 
 setLoading(false)
 }
 
   return (
     <div className='h-screen flex justify-center items-center bg-last '>
-<form onSubmit={handleSubmit} className=' w-full mt-5 bg-white rounded-lg m-14 lg:m-14 lg:w-96 md:w-96 h-auto border-2 p-5 shadow-md'>
+<form onSubmit={handleSubmit} className=' w-full mt-5 bg-white rounded-lg m-14 lg:m-14 lg:w-96 md:w-96 h-auto border-2 p-5 shadow-xl'>
 <p className='flex justify-center font-frank items-center text-secondary text-2xl'>Sign Up</p>
   {error && <Error error={error}/> }
    

@@ -1,10 +1,11 @@
 import React, { useRef, useState } from "react";
 import { useAuth } from "../Component/Layout";
 // import { useNavigate, Link } from "react-router-dom";
+import { useRouter } from 'next/router';
 import Link from 'next/link'
 import Error from "./Error";
 function Login() {
-  // const navigate = useNavigate();
+  const router = useRouter();
 
   // the values of the input fielsa
   const emailref = useRef(null);
@@ -21,7 +22,8 @@ function Login() {
       seterror("");
       setLoading(true);
       await login(emailref.current.value, passwordref.current.value);
-      // navigate("/");
+      
+      router.push('/ ')
       // <Link href="/"/> 
     } catch {
       seterror("failed to login");
@@ -87,7 +89,7 @@ function Login() {
         </Link>
         <div className="flex   mb-6">
           <div className="flex  h-5">
-            <p className=" text-sm font-medium flex justify-center items-center text-secondary ml-20  ">
+            <p className=" text-sm font-medium flex justify-center items-center text-secondary ml-10  lg:ml-20  ">
               don't have an account?   
               <Link href='/Signup' ><span
                 
