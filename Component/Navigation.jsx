@@ -31,7 +31,9 @@ export const Navigation = () => {
           onClick={handleClick}
         >
            
-            <svg  className='fill-current text-secondary  h-6 w-6 mr-2' fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            <svg  className='fill-current text-secondary  h-6 w-6 mr-2' fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
         </button>
         {/*Note that in this div we will use a ternary operator to decide whether or not to display the content of the div  */}
         <div

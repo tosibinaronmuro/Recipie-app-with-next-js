@@ -1,10 +1,10 @@
 import React from "react";
 
-function FoodCard() {
+function FoodCard({image,title,id}) {
   return (
-    <div className="bg-last w-44 lg:w-80 h-auto m-2 rounded lg:rounded-lg ">
+    <div className="bg-last w-44 lg:w-80 lg:h-96 h-auto m-1   rounded lg:rounded-lg ">
       <div className="p-3 flex justify-between">
-        <p className="font-frank text-secondary text-xl bg-white ">title</p>
+        <p className="font-frank rounded pl-3 p-1 text-secondary text-sm lg:text-xl bg-white ">{title}</p>
         <button className="rounded-full   bg-primary w-8 h-8 flex justify-center items-center hover:bg-primary focus:ring-4 focus:outline-none focus:ring-primary hover:shadow-xl">
           <svg
             className="w-6 h-6 text-white"
@@ -14,9 +14,9 @@ function FoodCard() {
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
+             strokeLinecap="round"
+             strokeLinejoin="round"
+             strokeWidth="2"
               d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
             ></path>
           </svg>
@@ -32,18 +32,22 @@ function FoodCard() {
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
               d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
             ></path>
           </svg>
           <span>3 mins</span>
         </div>
-
-        
       </div>
-      <div className="lg:rounded-b-lg"><img className=" rounded lg:rounded-b-lg "   src="http://1.bp.blogspot.com/--sbXcXkwXm4/Tl2TtJMBdNI/AAAAAAAABoQ/jixOrvcb1ys/s1600/IMAG0009.jpg" alt="" /></div>
+      <div className="lg:rounded-b-lg flex justify-center items-baseline ">
+        <img
+          className=" rounded lg:rounded-b-lg w-full h-full "
+          src={ image }
+          alt=""
+        />
+      </div>
     </div>
   );
 }

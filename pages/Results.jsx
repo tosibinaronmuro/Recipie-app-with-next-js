@@ -2,23 +2,28 @@ import React from "react";
 import { useEffect, useRef, useState } from "react";
 import DisplayResults from "../Component/DisplayResults";
 import axios from "axios";
+import {useAuth} from '../Component/Layout'
 
 function Results() {
   const searchref = useRef(null);
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState("chicken");
+  const [data,setdata]=useState()
+  const {searchrender,setsearchrender}=useAuth()
   const handleSubmit = (e) => {
     e.preventDefault();
+    setsearchrender(true)
     setSearch(searchref.current.value);
     searchref.current.value=''
   };
   useEffect(() => {
     const API_KEY = "0ef6a2baae594f999fcb22462fe8a649";
-    const URL = `https://api.spoonacular.com/recipes/complexSearch?query=${search}&number=20&apiKey=${API_KEY}`;
+    const URL = `https://api.spoonacular.com/recipes/complexSearch?query=${search}&number=10&apiKey=${API_KEY}`;
 
     async function fetchData() {
       const response = await axios.get(URL);
       const recipe = response.data.results;
-      console.log(recipe);
+      // console.log(recipe);
+      setdata(recipe)
     }
 
     fetchData();
@@ -29,7 +34,7 @@ function Results() {
         onSubmit={handleSubmit}
         className="flex items-center m-auto p-5 w-96"
       >
-        <label for="simple-search" className="sr-only">
+        <label htmlFor="simple-search" className="sr-only">
           Search
         </label>
         <div className="relative w-full">
@@ -68,15 +73,15 @@ function Results() {
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
               d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
             ></path>
           </svg>
         </button>
       </form>
-      <DisplayResults searchResults={search} />
+     {searchrender &&  <DisplayResults searchResults={search} recipeData={data} />}
     </div>
   );
 }
