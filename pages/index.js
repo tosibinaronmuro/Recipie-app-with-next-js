@@ -3,22 +3,22 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import axios from 'axios'
 import { useEffect } from 'react'
- const API_KEY="0ef6a2baae594f999fcb22462fe8a649"
+//  const API_KEY="0ef6a2baae594f999fcb22462fe8a649"
  
-  const URL= `https://api.spoonacular.com/recipes/complexSearch?query=vegetable&number=20&apiKey=${API_KEY}`
-export async function getServerSideProps(context) {
- const response= await axios.get(URL)
-//  console.log(sponse.data.resultsre)
+//   const URL= `https://api.spoonacular.com/recipes/complexSearch?query=vegetable&number=20&apiKey=${API_KEY}`
+// export async function getServerSideProps(context) {
+//  const response= await axios.get(URL)
+// //  console.log(sponse.data.resultsre)
  
- return{
-   props:{
+//  return{
+//    props:{
  
- responses:response.data.results
+//  responses:response.data.results
   
-   }
- }
+//    }
+//  }
 
-}
+// }
 
  
 
@@ -35,7 +35,7 @@ export default function Home({responses}) {
       </Head>
 
        <div className='font-custom '>
-         {responses.map((item)=>{
+         {/* {responses.map((item)=>{
            return(
              <div className='bg-last'>
              <p className='font-frank text-primary'>Helloo</p>
@@ -46,7 +46,7 @@ export default function Home({responses}) {
               <img src={item.image} alt="" />
               </div>
            )
-         })}
+         })} */}
          hello world
        </div>
     </div>

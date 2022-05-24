@@ -1,12 +1,12 @@
 import React from "react";
 
-function Pagination({ increase, decrease }) {
-  // ${number}${search}
+function Pagination({ increase, decrease,number1,number2}) {
+ 
   return (
     <div className="flex flex-col items-center  ">
       <span className="text-sm text-secondary mt-5 ">
-        Showing <span className="font-semibold text-gray-900  ">1</span> to{" "}
-        <span className="font-semibold text-gray-900  ">10</span> of{" "}
+        Showing <span className="font-semibold text-gray-900  ">{number1}</span> to{" "}
+        <span className="font-semibold text-gray-900  ">{number2}</span> of{" "}
         <span className="font-semibold text-gray-900  ">100</span> Entries
       </span>
       <div className="inline-flex mt-2 xs:mt-0 mb-5">

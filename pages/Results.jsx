@@ -12,17 +12,19 @@ function Results() {
   const [data, setdata] = useState();
   const { searchrender, setsearchrender } = useAuth();
   const [number, setNmber] = useState(10);
+  const [number1, setNmber1] = useState(1);
+  const [number2, setNmber2] = useState(10);
   const [offset, setoffset] = useState(0);
   const handleIncrease = (e) => {
-    setNmber((prev) => prev + 10);
+    setNmber1((prev) => prev + 10);
+     setNmber2((prev) => prev + 10);
     setoffset((prev) => prev + 10);
     console.log(number, offset);
   };
   const handleDecrease = (e) => {
-    if (number > 10) {
-      setNmber((prev) => prev - 10);
-      setoffset((prev) => prev - 10);
-    }
+    setNmber1((prev) => prev - 10);
+    setNmber2((prev) => prev - 10);
+    setoffset((prev) => prev - 10);
     console.log(number, offset);
   };
   const handleSubmit = (e) => {
@@ -46,7 +48,7 @@ function Results() {
     }
 
     fetchData();
-  }, [search, offset, number]);
+  }, [search,offset,number]);
   return (
     <>
       <Head>
@@ -108,7 +110,7 @@ function Results() {
         {searchrender && (
           <DisplayResults searchResults={search} recipeData={data} />
         )}
-        <Pagination increase={handleIncrease} decrease={handleDecrease} />
+        <Pagination increase={handleIncrease} decrease={handleDecrease} number1={number1} number2={number2} />
       </div>
     </>
   );
