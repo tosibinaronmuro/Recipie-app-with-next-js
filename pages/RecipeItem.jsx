@@ -13,8 +13,8 @@ function RecipeItem() {
   useEffect(() => {
     const API_KEY = "0ef6a2baae594f999fcb22462fe8a649";
     const API_KEY2='084e61d247474b97976610933c49ceca' 
-    const URL = `https://api.spoonacular.com/recipes/${recipeID}/ingredientWidget.json?apiKey=${API_KEY2}`;
-   const STEPSURL=`https://api.spoonacular.com/recipes/716429/information?apiKey=${API_KEY2}`
+    const URL = `https://api.spoonacular.com/recipes/${recipeID}/ingredientWidget.json?apiKey=${API_KEY}`;
+   const STEPSURL=`https://api.spoonacular.com/recipes/${recipeID}/analyzedInstructions?apiKey=${API_KEY}`
 
     async function fetchData() {
       try {
@@ -23,9 +23,11 @@ function RecipeItem() {
         loading
         const recipe = response.data.results;
         setdata(response.data.ingredients);
+        setstepsdata(stepsres.data)
         setloading(false)
+        // stepsres.data[0].steps[2].step
         console.log(
-          `recipe=${stepsres.data[0].steps} `
+          `recipe=${ stepsdata[0]  } `
         );
       } catch (error) {
         console.log(error);
@@ -36,7 +38,7 @@ function RecipeItem() {
   return (
     <div className="bg-last">
       {recipeID}
-      {!loading && <RecipeItemData data={data}/>}
+      {!loading && <RecipeItemData data={data} stepdata={stepsdata[0]}/>}
     
     </div>
   );

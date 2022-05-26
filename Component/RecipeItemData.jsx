@@ -1,6 +1,6 @@
 import React from 'react'
 
-function RecipeItemData({data}) {
+function RecipeItemData({data,stepdata}) {
   return (
       <>
      <div className=" pt-3 lg:p-5 rounded-lg flex flex-col lg:flex-row justify-center bg-white">
@@ -27,6 +27,22 @@ function RecipeItemData({data}) {
        })}
      </div>
      {/* https://api.spoonacular.com/recipes/4632/summary */}
+            </div>
+          </div>
+          <div className="m-3">
+            <p className="text-xl text-secondary font-frank">Steps</p>
+            <hr />
+            <div>
+            <div>
+       {stepdata.steps.map((item)=>{
+         return(
+           <div className="flex   font-rubik text-secondary m-2">
+            <span className='m-1'>{item.number}</span> <p className='m-1'>{item.step}</p> 
+           </div>
+         )
+       })}
+     </div>
+  
             </div>
           </div>
         </div>

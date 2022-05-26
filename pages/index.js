@@ -8,10 +8,10 @@ import FoodCard from "../Component/FoodCard";
 
 import Link from "next/link";
 import { useEffect, useRef } from "react";
-//  const API_KEY="0ef6a2baae594f999fcb22462fe8a649"
+ const API_KEY="0ef6a2baae594f999fcb22462fe8a649"
 const API_KEY2='084e61d247474b97976610933c49ceca' 
 
-  const URL= `https://api.spoonacular.com/recipes/complexSearch?query=chicken&number=20&apiKey=${API_KEY2}`
+  const URL= `https://api.spoonacular.com/recipes/complexSearch?query=chicken&number=20&apiKey=${API_KEY}`
 export async function getStaticProps(context) {
  const response= await axios.get(URL)
  console.log(response.data.results)
@@ -29,14 +29,17 @@ export async function getStaticProps(context) {
 export default function Home({ responses }) {
   const router = useRouter();
   const searchref = useRef(null);
-  const { searchrender, setsearchrender, search, setSearch } = useAuth();
+  const { searchrender, setRecipeID,recipeID,setsearchrender, search, setSearch } = useAuth();
   const handleSubmit = (e) => {
     e.preventDefault();
     
     setSearch(searchref.current.value);
     searchref.current.value = "";
-    setsearchrender(true);
+      setTimeout(() => {
+        setsearchrender(true)     ;},1200)
+    // ;
     console.log(search)
+    router.push("/Results")
   };
   return (
     <div className="bg-last">
@@ -94,11 +97,11 @@ export default function Home({ responses }) {
                   ></input>
                 </div>
                 <button
-                  // onClick={() => {
-                  //   setTimeout(() => {
-                  //     router.push("/Results");},2000)
+                  onClick={() => {
+                  
+                    handleSubmit
                      
-                  // }}
+                  }}
                   type="submit"
                   className="p-2.5 ml-2 text-sm font-medium text-white bg-primary rounded-full border border-primary hover:bg-primary focus:ring-4 focus:outline-none focus:ring-primary hover:shadow-xl "
                 >
