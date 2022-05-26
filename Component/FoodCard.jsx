@@ -1,18 +1,23 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { useAuth } from "../Component/Layout";
 
 function FoodCard({ image, title, id }) {
   const [favorites, setfavorites] = useState(false);
+
+  // getting the global state
   const { recipeID, setRecipeID } = useAuth();
   
+
+  // the click function
   const handleClick = () => {
-    if (recipeID=0){
-      setRecipeID(prev=>prev+id);
-    }
-   else{ setRecipeID( id);}
-    setfavorites(true);
+  //  assigning the id value to the global state
+      setRecipeID(id);
+     
     console.log(recipeID)
   };
+  useEffect(()=>{
+console.log(recipeID)
+  },[recipeID])
   // setRecipeID(id);
   return (
     <div className="bg-last w-44 lg:w-80 lg:h-96 h-auto m-1   rounded lg:rounded-lg ">

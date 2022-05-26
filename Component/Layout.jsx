@@ -18,7 +18,7 @@ export const useAuth = () => {
 
 function Layout({ children }) {
   const [loading, setLoading] = useState(true);
-
+  const [search, setSearch] = useState("chicken");
   const [currentUser, setCurrentUser] = useState();
   const [searchrender, setsearchrender] = useState(false);
   const [recipeID, setRecipeID] = useState(0);
@@ -65,6 +65,7 @@ function Layout({ children }) {
     setsearchrender,
     recipeID,
     setRecipeID,
+    search, setSearch
   };
   return (
     <>

@@ -4,29 +4,37 @@ import DisplayResults from "../Component/DisplayResults";
 import axios from "axios";
 import { useAuth } from "../Component/Layout";
 import Pagination from "../Component/Pagination";
-import Head from "next/head";
+import Head from "next/head"; 
 
 function Results() {
   const searchref = useRef(null);
-  const [search, setSearch] = useState("chicken");
+
   const [data, setdata] = useState();
-  const { searchrender, setsearchrender } = useAuth();
+  const { searchrender, setsearchrender,search, setSearch } = useAuth();
+  const [loading, setloading] = useState(true);
   const [number, setNmber] = useState(10);
   const [number1, setNmber1] = useState(1);
   const [number2, setNmber2] = useState(10);
   const [offset, setoffset] = useState(0);
+   
+
+  // increase pagination number
   const handleIncrease = (e) => {
     setNmber1((prev) => prev + 10);
      setNmber2((prev) => prev + 10);
     setoffset((prev) => prev + 10);
     console.log(number, offset);
   };
+// 
+  // decrease pagination number
   const handleDecrease = (e) => {
     setNmber1((prev) => prev - 10);
     setNmber2((prev) => prev - 10);
     setoffset((prev) => prev - 10);
     console.log(number, offset);
   };
+
+  // search button submit
   const handleSubmit = (e) => {
     e.preventDefault();
     setsearchrender(true);
@@ -35,13 +43,16 @@ function Results() {
   };
   useEffect(() => {
     const API_KEY = "0ef6a2baae594f999fcb22462fe8a649";
-    const URL = `https://api.spoonacular.com/recipes/complexSearch?query=${search}&number=${number}&offset=${offset}&apiKey=${API_KEY}`;
+    const API_KEY2='084e61d247474b97976610933c49ceca' 
+    const URL = `https://api.spoonacular.com/recipes/complexSearch?query=${search}&number=${number}&offset=${offset}&apiKey=${API_KEY2}`;
 
     async function fetchData() {
       try {
+        loading
         const response = await axios.get(URL);
         const recipe = response.data.results;
         setdata(recipe);
+        setloading(false)
       } catch (error) {
         console.log(error);
       }
@@ -110,6 +121,8 @@ function Results() {
         {searchrender && (
           <DisplayResults searchResults={search} recipeData={data} />
         )}
+       
+         
         <Pagination increase={handleIncrease} decrease={handleDecrease} number1={number1} number2={number2} />
       </div>
     </>

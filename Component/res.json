@@ -1,0 +1,359 @@
+ [
+    {
+        "name": "",
+        "steps": [
+            {
+                "number": 1,
+                "step": "In a skillet, melt butter over medium heat",
+                "ingredients": [
+                    {
+                        "id": 1001,
+                        "name": "butter",
+                        "localizedName": "butter",
+                        "image": "butter-sliced.jpg"
+                    }
+                ],
+                "equipment": [
+                    {
+                        "id": 404645,
+                        "name": "frying pan",
+                        "localizedName": "frying pan",
+                        "image": "pan.png"
+                    }
+                ]
+            },
+            {
+                "number": 2,
+                "step": "Add minced garlic and onion, and saute for 5-6 minutes, until fragrant and translucent.",
+                "ingredients": [
+                    {
+                        "id": 0,
+                        "name": "minced garlic",
+                        "localizedName": "minced garlic",
+                        "image": "garlic.png"
+                    },
+                    {
+                        "id": 11282,
+                        "name": "onion",
+                        "localizedName": "onion",
+                        "image": "brown-onion.png"
+                    }
+                ],
+                "equipment": [],
+                "length": {
+                    "number": 6,
+                    "unit": "minutes"
+                }
+            },
+            {
+                "number": 3,
+                "step": "Let cool until manageable",
+                "ingredients": [],
+                "equipment": []
+            },
+            {
+                "number": 4,
+                "step": "Mix sausage, onion+garlic, thyme, basil, fresh dill, salt and pine nuts in a bowl, until uniform and smooth.",
+                "ingredients": [
+                    {
+                        "id": 2045,
+                        "name": "fresh dill",
+                        "localizedName": "fresh dill",
+                        "image": "dill.jpg"
+                    },
+                    {
+                        "id": 12147,
+                        "name": "pine nuts",
+                        "localizedName": "pine nuts",
+                        "image": "pine-nuts.png"
+                    },
+                    {
+                        "id": 1017063,
+                        "name": "sausage",
+                        "localizedName": "sausage",
+                        "image": "raw-pork-sausage.png"
+                    },
+                    {
+                        "id": 11215,
+                        "name": "garlic",
+                        "localizedName": "garlic",
+                        "image": "garlic.png"
+                    },
+                    {
+                        "id": 2044,
+                        "name": "basil",
+                        "localizedName": "basil",
+                        "image": "basil.jpg"
+                    },
+                    {
+                        "id": 2049,
+                        "name": "thyme",
+                        "localizedName": "thyme",
+                        "image": "thyme.jpg"
+                    },
+                    {
+                        "id": 2047,
+                        "name": "salt",
+                        "localizedName": "salt",
+                        "image": "salt.jpg"
+                    }
+                ],
+                "equipment": [
+                    {
+                        "id": 404783,
+                        "name": "bowl",
+                        "localizedName": "bowl",
+                        "image": "bowl.jpg"
+                    }
+                ]
+            },
+            {
+                "number": 5,
+                "step": "Roll out the puff pastry out on a lightly floured surface into 4 strips 3 inches wide and about 12 inches long.",
+                "ingredients": [
+                    {
+                        "id": 18337,
+                        "name": "puff pastry sheets",
+                        "localizedName": "puff pastry sheets",
+                        "image": "puff-pastry.png"
+                    },
+                    {
+                        "id": 0,
+                        "name": "roll",
+                        "localizedName": "roll",
+                        "image": "dinner-yeast-rolls.jpg"
+                    }
+                ],
+                "equipment": []
+            },
+            {
+                "number": 6,
+                "step": "Arrange sausage stuffing into a 1 inch roll in the middle of the strip, taking care to reach all the way to the edge on short end of the strip.",
+                "ingredients": [
+                    {
+                        "id": 18082,
+                        "name": "stuffing",
+                        "localizedName": "stuffing",
+                        "image": "stuffing-mix.png"
+                    },
+                    {
+                        "id": 1017063,
+                        "name": "sausage",
+                        "localizedName": "sausage",
+                        "image": "raw-pork-sausage.png"
+                    },
+                    {
+                        "id": 0,
+                        "name": "roll",
+                        "localizedName": "roll",
+                        "image": "dinner-yeast-rolls.jpg"
+                    }
+                ],
+                "equipment": []
+            },
+            {
+                "number": 7,
+                "step": "Sprinkle a portion of parmesan on top of the sausage stuffing",
+                "ingredients": [
+                    {
+                        "id": 1033,
+                        "name": "parmesan",
+                        "localizedName": "parmesan",
+                        "image": "parmesan.jpg"
+                    },
+                    {
+                        "id": 18082,
+                        "name": "stuffing",
+                        "localizedName": "stuffing",
+                        "image": "stuffing-mix.png"
+                    },
+                    {
+                        "id": 1017063,
+                        "name": "sausage",
+                        "localizedName": "sausage",
+                        "image": "raw-pork-sausage.png"
+                    }
+                ],
+                "equipment": []
+            },
+            {
+                "number": 8,
+                "step": "Spread some egg wash along one of the long edges of the dough.",
+                "ingredients": [
+                    {
+                        "id": 0,
+                        "name": "spread",
+                        "localizedName": "spread",
+                        "image": ""
+                    },
+                    {
+                        "id": 0,
+                        "name": "dough",
+                        "localizedName": "dough",
+                        "image": "pizza-dough"
+                    },
+                    {
+                        "id": 1123,
+                        "name": "egg",
+                        "localizedName": "egg",
+                        "image": "egg.png"
+                    }
+                ],
+                "equipment": []
+            },
+            {
+                "number": 9,
+                "step": "Carefully fold the dough over the sausage stuffing, closing the seem.",
+                "ingredients": [
+                    {
+                        "id": 18082,
+                        "name": "stuffing",
+                        "localizedName": "stuffing",
+                        "image": "stuffing-mix.png"
+                    },
+                    {
+                        "id": 1017063,
+                        "name": "sausage",
+                        "localizedName": "sausage",
+                        "image": "raw-pork-sausage.png"
+                    },
+                    {
+                        "id": 0,
+                        "name": "dough",
+                        "localizedName": "dough",
+                        "image": "pizza-dough"
+                    }
+                ],
+                "equipment": []
+            },
+            {
+                "number": 10,
+                "step": "Roll the sausage filled dough pipe on the board a little bit to ensure uniform thickness and to seal the seam.",
+                "ingredients": [
+                    {
+                        "id": 1017063,
+                        "name": "sausage",
+                        "localizedName": "sausage",
+                        "image": "raw-pork-sausage.png"
+                    },
+                    {
+                        "id": 0,
+                        "name": "dough",
+                        "localizedName": "dough",
+                        "image": "pizza-dough"
+                    },
+                    {
+                        "id": 0,
+                        "name": "roll",
+                        "localizedName": "roll",
+                        "image": "dinner-yeast-rolls.jpg"
+                    }
+                ],
+                "equipment": []
+            },
+            {
+                "number": 11,
+                "step": "Proceed with the remaining dough and stuffing.",
+                "ingredients": [
+                    {
+                        "id": 18082,
+                        "name": "stuffing",
+                        "localizedName": "stuffing",
+                        "image": "stuffing-mix.png"
+                    },
+                    {
+                        "id": 0,
+                        "name": "dough",
+                        "localizedName": "dough",
+                        "image": "pizza-dough"
+                    }
+                ],
+                "equipment": []
+            },
+            {
+                "number": 12,
+                "step": "When all pipes are ready, spread the egg wash all over them, and sprinkle the seeds of your choosing on top.",
+                "ingredients": [
+                    {
+                        "id": 0,
+                        "name": "spread",
+                        "localizedName": "spread",
+                        "image": ""
+                    },
+                    {
+                        "id": 93818,
+                        "name": "seeds",
+                        "localizedName": "seeds",
+                        "image": "sunflower-seeds.jpg"
+                    },
+                    {
+                        "id": 1123,
+                        "name": "egg",
+                        "localizedName": "egg",
+                        "image": "egg.png"
+                    }
+                ],
+                "equipment": []
+            },
+            {
+                "number": 13,
+                "step": "Preheat the oven to 425F.",
+                "ingredients": [],
+                "equipment": [
+                    {
+                        "id": 404784,
+                        "name": "oven",
+                        "localizedName": "oven",
+                        "image": "oven.jpg",
+                        "temperature": {
+                            "number": 425.0,
+                            "unit": "Fahrenheit"
+                        }
+                    }
+                ]
+            },
+            {
+                "number": 14,
+                "step": "Cut each pipe into 12 1 bites.",
+                "ingredients": [],
+                "equipment": []
+            },
+            {
+                "number": 15,
+                "step": "Arrange the bites on a baking sheet 1 apart.",
+                "ingredients": [],
+                "equipment": [
+                    {
+                        "id": 404727,
+                        "name": "baking sheet",
+                        "localizedName": "baking sheet",
+                        "image": "baking-sheet.jpg"
+                    }
+                ]
+            },
+            {
+                "number": 16,
+                "step": "Bake for 20 minutes, or until golden and crisp.",
+                "ingredients": [],
+                "equipment": [
+                    {
+                        "id": 404784,
+                        "name": "oven",
+                        "localizedName": "oven",
+                        "image": "oven.jpg"
+                    }
+                ],
+                "length": {
+                    "number": 20,
+                    "unit": "minutes"
+                }
+            },
+            {
+                "number": 17,
+                "step": "Serve warm",
+                "ingredients": [],
+                "equipment": []
+            }
+        ]
+    }
+]

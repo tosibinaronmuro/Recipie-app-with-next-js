@@ -17,6 +17,9 @@ module.exports = {
         'tertiary':'#be9c90',
         'last':'#fff5ee'
         
+      },
+      spacing: {
+        '128': '32rem',
       }
     },
   },

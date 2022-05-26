@@ -2,8 +2,11 @@ import React from "react";
 import FoodCard from "./FoodCard";
 import { useAuth } from "../Component/Layout";
 import Link from 'next/link'
+ 
 
 function DisplayResults({ searchResults, recipeData }) {
+    // getting the global state
+    const { recipeID, setRecipeID } = useAuth();
   const { searchrender, setsearchrender } = useAuth();
   console.log(recipeData);
   return (
@@ -15,7 +18,7 @@ function DisplayResults({ searchResults, recipeData }) {
       <div className=" pt-3 lg:p-5 rounded-lg flex flex-wrap justify-center bg-white">
         {recipeData.map((item) => {
           return (
-           <Link href={'/RecipeItem'}><ul key={item.id}>
+           <Link key={item.id} href={'/RecipeItem'}><ul  onClick={()=>{setRecipeID(item.id); console.log(recipeID)}} >
               <FoodCard id={item.id} image={item.image} title={item.title} />
             </ul></Link>
           // <FoodCard id={item.id} image={item.image} title={item.title} />
