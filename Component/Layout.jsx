@@ -22,6 +22,8 @@ function Layout({ children }) {
   const [currentUser, setCurrentUser] = useState();
   const [searchrender, setsearchrender] = useState(false);
   const [recipeID, setRecipeID] = useState(0);
+   const [recipeIDtitle, setRecipeIDtitle] = useState();
+    const [recipeIDimage, setRecipeIDimage] = useState();
   // signup with firebase
   function signup(email, password) {
     return createUserWithEmailAndPassword(auth, email, password);
@@ -65,7 +67,7 @@ function Layout({ children }) {
     setsearchrender,
     recipeID,
     setRecipeID,
-    search, setSearch
+    search, setSearch,recipeIDtitle, setRecipeIDtitle,recipeIDimage, setRecipeIDimage
   };
   return (
     <>

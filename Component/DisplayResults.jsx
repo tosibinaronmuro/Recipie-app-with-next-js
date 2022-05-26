@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 function DisplayResults({ searchResults, recipeData }) {
     // getting the global state
-    const { recipeID, setRecipeID } = useAuth();
+    const { recipeID, setRecipeID,recipeIDimage, setRecipeIDimage,recipeIDtitle, setRecipeIDtitle } = useAuth();
   const { searchrender, setsearchrender } = useAuth();
   console.log(recipeData);
   return (
@@ -18,7 +18,8 @@ function DisplayResults({ searchResults, recipeData }) {
       <div className=" pt-3 lg:p-5 rounded-lg flex flex-wrap justify-center bg-white">
         {recipeData.map((item) => {
           return (
-           <Link key={item.id} href={'/RecipeItem'}><ul  onClick={()=>{setRecipeID(item.id); console.log(recipeID)}} >
+           <Link key={item.id} href={'/RecipeItem'}><ul  onClick={()=>{setRecipeID(item.id); setRecipeIDtitle(item.title);
+            setRecipeIDimage(item.image)}} >
               <FoodCard id={item.id} image={item.image} title={item.title} />
             </ul></Link>
           // <FoodCard id={item.id} image={item.image} title={item.title} />

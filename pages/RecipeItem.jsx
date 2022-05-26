@@ -5,7 +5,7 @@ import axios from "axios";
 import RecipeItemData from "../Component/RecipeItemData";
 
 function RecipeItem() {
-  const { recipeID, setRecipeID,setsearchrender} = useAuth();
+  const { recipeID, setRecipeID,setsearchrender,recipeIDimage, setRecipeIDimage,recipeIDtitle, setRecipeIDtitle} = useAuth();
   const [data, setdata] = useState();
   const [stepsdata, setstepsdata] = useState();
   const [loading, setloading] = useState(true);
@@ -36,9 +36,9 @@ function RecipeItem() {
     fetchData();
   }, [recipeID]);
   return (
-    <div className="bg-last">
-      {recipeID}
-      {!loading && <RecipeItemData data={data} stepdata={stepsdata[0]}/>}
+    <div className="bg-last pb-3">
+      <p className="font-frank rounded flex justify-center pl-3 p-1 text-secondary text-xl lg:text-xl   ">{recipeIDtitle}</p>
+      {!loading && <RecipeItemData data={data} stepdata={stepsdata[0]} image={recipeIDimage} />}
     
     </div>
   );

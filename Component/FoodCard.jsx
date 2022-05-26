@@ -5,14 +5,15 @@ function FoodCard({ image, title, id }) {
   const [favorites, setfavorites] = useState(false);
 
   // getting the global state
-  const { recipeID, setRecipeID } = useAuth();
+  const { recipeID, setRecipeID,recipeIDimage, setRecipeIDimage,recipeIDtitle, setRecipeIDtitle} = useAuth();
   
 
   // the click function
   const handleClick = () => {
   //  assigning the id value to the global state
       setRecipeID(id);
-     
+      setRecipeIDtitle(title)
+      setRecipeIDimage(image)
     console.log(recipeID)
   };
   useEffect(()=>{
