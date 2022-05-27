@@ -14,7 +14,7 @@ function RecipeItemData({data,stepdata,image}) {
           </div>
 
           <div className="m-3">
-            <p className="text-xl text-secondary font-frank">Ingredients</p>
+            <p className="text-xl text-secondary font-frank">Ingredients <span className='text-sm font-extralight'>(per one serving)</span></p>
             <hr />
             <div>
             <div>

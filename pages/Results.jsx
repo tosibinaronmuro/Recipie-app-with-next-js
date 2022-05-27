@@ -1,4 +1,5 @@
 import React from "react";
+import { useRouter } from 'next/router';
 import { useEffect, useRef, useState } from "react";
 import DisplayResults from "../Component/DisplayResults";
 import axios from "axios";
@@ -10,13 +11,13 @@ function Results() {
   const searchref = useRef(null);
 
   const [data, setdata] = useState();
-  const { searchrender, setsearchrender,search, setSearch } = useAuth();
+  const { searchrender, setsearchrender,search, setSearch,currentUser } = useAuth();
   const [loading, setloading] = useState(true);
   const [number, setNmber] = useState(10);
   const [number1, setNmber1] = useState(1);
   const [number2, setNmber2] = useState(10);
   const [offset, setoffset] = useState(0);
-   
+  const router = useRouter();
 
   // increase pagination number
   const handleIncrease = (e) => {
@@ -60,6 +61,13 @@ function Results() {
 
     fetchData();
   }, [search,offset,number]);
+
+  // protected routes
+  // useEffect(() => {
+  //   if (  !currentUser)
+  //     {router.push('/Login')}else {null}
+  // }, [currentUser])
+  
   return (
     <>
       <Head>

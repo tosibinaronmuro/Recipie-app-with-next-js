@@ -1,9 +1,12 @@
 import Link from 'next/link';
 import { useState } from 'react';
+import { useAuth } from "../Component/Layout";
+import { useRouter } from 'next/router';
 
 export const Navigation = () => {
   const [active, setActive] = useState(false);
-
+  const router = useRouter();
+  const { currentUser,logout } = useAuth();
   const handleClick = () => {
     setActive(!active);
   };
@@ -47,21 +50,25 @@ export const Navigation = () => {
                 Home
               </a>
             </Link>
-            <Link href='/Results'>
+          {currentUser && <Link href='/Results'>
               <a className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-secondary hover:text-primary font-bold items-center justify-center  '>
                Results
               </a>
-            </Link>
+            </Link> }  
+            
+
             <Link href='/Signup'>
               <a className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-secondary hover:text-primary font-bold items-center justify-center  '>
-                About us
+               Sign-up
               </a>
             </Link>
             <Link href='/Login'>
               <a className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-secondary hover:text-primary font-bold items-center justify-center  '>
-                Contact us
+                Login
               </a>
             </Link>
+            {currentUser && <button onClick={async ()=>{  logout(); router.push('/Login')}} className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-secondary hover:text-primary font-bold items-center justify-center  '>logout</button>}
+            
           </div>
         </div>
       </nav>

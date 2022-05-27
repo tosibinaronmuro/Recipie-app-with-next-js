@@ -27,7 +27,7 @@ function Login() {
       router.push('/ ')
       // <Link href="/"/> 
     } catch {
-      seterror("failed to login");
+      seterror("failed to login... Check email or password");
     }
     setLoading(false);
   }
