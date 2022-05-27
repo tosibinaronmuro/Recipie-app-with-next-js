@@ -10,7 +10,7 @@ function NotFound() {
     setTimeout(() => {
       router.push("/");
     }, 5000);
-  }, []);
+  }, [router]);
   return (
     <>
       <Head>

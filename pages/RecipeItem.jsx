@@ -37,7 +37,7 @@ function RecipeItem() {
       }
     }
     fetchData();
-  }, [recipeID]);
+  }, [recipeID,loading,stepsdata]);
   const handleClick = () => {
      setfavorites(true)
     // setRecipeID(id);

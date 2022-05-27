@@ -42,10 +42,9 @@ export default function Home({ responses }) {
         setsearchrender(true)     ;},2000)
     // ;
     console.log(search)
-   if(currentUser){
-     setTimeout(() => {
+   if(currentUser){ 
       router.push("/Results")
-     }, 2000);
+     
     
    }else{
     setShowModal(true)
