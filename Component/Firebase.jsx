@@ -1,5 +1,5 @@
 import {initializeApp} from 'firebase/app'
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth"
+import { getAuth, createUserWithEmailAndPassword,GoogleAuthProvider  } from "firebase/auth"
  
  
  
@@ -17,5 +17,5 @@ const Firebase =initializeApp( {
 
 
 export const auth= getAuth(Firebase)
- 
+export const provider=new GoogleAuthProvider()
 export default Firebase ;

@@ -7,7 +7,7 @@ function RecipeItemData({data,stepdata,image}) {
         <div className="flex-1 ">
           <div className=" flex justify-center    ">
             <img
-              
+              className='rounded-xl'
               src={image}
               alt=""
             />
@@ -21,7 +21,7 @@ function RecipeItemData({data,stepdata,image}) {
        {data.map((item)=>{
          return(
            <div className="flex justify-between font-rubik text-secondary m-2">
-             <p>{item.name}</p> <span>{item.amount.metric.value}{item.amount.metric.unit}</span>
+             <p>{item.name.toUpperCase()}</p> <span className='font-bold'>{item.amount.metric.value}{item.amount.metric.unit}</span>
            </div>
          )
        })}

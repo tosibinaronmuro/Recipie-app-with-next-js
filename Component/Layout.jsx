@@ -20,11 +20,12 @@ function Layout({ children }) {
   const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("goat");
+  const [isLoggedin, setisLoggedin] = useState(false);
   const [currentUser, setCurrentUser] = useState();
   const [searchrender, setsearchrender] = useState(false);
   const [recipeID, setRecipeID] = useState(0);
-   const [recipeIDtitle, setRecipeIDtitle] = useState();
-    const [recipeIDimage, setRecipeIDimage] = useState();
+  const [recipeIDtitle, setRecipeIDtitle] = useState();
+  const [recipeIDimage, setRecipeIDimage] = useState();
   // signup with firebase
   function signup(email, password) {
     return createUserWithEmailAndPassword(auth, email, password);
@@ -35,7 +36,11 @@ function Layout({ children }) {
   }
   // logout
   function logout() {
-    return signOut(auth);
+    return signOut(auth).then(() => {
+      setisLoggedin(false);
+      localStorage.removeItem("loggedin");
+      setCurrentUser(null)
+    });
   }
   // reset password
   function resetPassword(email) {
@@ -57,6 +62,12 @@ function Layout({ children }) {
     });
     return () => unsubscribe();
   }, []);
+  useEffect(() => {
+    const monique = localStorage.getItem("loggedin");
+    if (monique) {
+      setisLoggedin(true);
+    }
+  }, []);
   // the global props and states needed for auth
   const value = {
     currentUser,
@@ -68,7 +79,16 @@ function Layout({ children }) {
     setsearchrender,
     recipeID,
     setRecipeID,
-    search, setSearch,recipeIDtitle, setRecipeIDtitle,recipeIDimage, setRecipeIDimage,showModal, setShowModal
+    isLoggedin,
+    setisLoggedin,
+    search,
+    setSearch,
+    recipeIDtitle,
+    setRecipeIDtitle,
+    recipeIDimage,
+    setRecipeIDimage,
+    showModal,
+    setShowModal,
   };
   return (
     <>
