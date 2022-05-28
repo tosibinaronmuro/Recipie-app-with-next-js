@@ -16,7 +16,7 @@ function DisplayResults({ searchResults, recipeData }) {
         Search results for '{searchResults}'
       </p>
       <div className=" pt-3 lg:p-5 rounded-lg flex flex-wrap justify-center bg-white">
-        {recipeData.map((item) => {
+        {recipeData?.map((item) => {
           return (
            <Link key={item.id} href={'/RecipeItem'}><ul  onClick={()=>{setRecipeID(item.id); setRecipeIDtitle(item.title);
             setRecipeIDimage(item.image)}} >
