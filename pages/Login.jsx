@@ -153,7 +153,7 @@ function Login() {
           <div className="flex   mb-6">
             <div className="flex  h-5">
               <p className=" text-sm font-medium flex justify-center items-center text-secondary ml-5  lg:ml-20 ">
-                don't have an account?
+                do not have an account?
                 <Link href="/Signup">
                   <span className="text-blue-600 hover:underline dark:text-blue-500">
                     sign-up

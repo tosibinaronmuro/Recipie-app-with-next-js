@@ -60,7 +60,7 @@ function Results() {
     }
 
     fetchData();
-  }, [search,offset,number]);
+  }, [search,offset,number,loading]);
 
   // protected routes
   // useEffect(() => {
