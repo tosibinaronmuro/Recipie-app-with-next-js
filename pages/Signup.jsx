@@ -41,7 +41,7 @@ const Signup = () => {
       signInWithPopup(auth, provider).then((result) => {
         setisLoggedin(true);
         localStorage.setItem("loggedin", true);
-        setCurrentUser(result.user.email);
+        setCurrentUser(result.user.displayName);
       });
       router.push("/");
     } catch (err) {

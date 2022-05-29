@@ -37,8 +37,9 @@ function Login() {
   const googleHandler = () => {
     try {
       signInWithPopup(auth, provider).then((result) => {
+         
         setisLoggedin(true);
-        setCurrentUser(result.user.email);
+        setCurrentUser(result.user.displayName );
         localStorage.setItem("loggedin", true);
        
       });

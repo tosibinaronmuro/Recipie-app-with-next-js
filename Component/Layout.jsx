@@ -88,7 +88,7 @@ function Layout({ children }) {
     recipeIDimage,
     setRecipeIDimage,
     showModal,
-    setShowModal,
+    setShowModal,setCurrentUser
   };
   return (
     <>

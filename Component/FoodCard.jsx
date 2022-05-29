@@ -14,10 +14,10 @@ function FoodCard({ image, title, id }) {
       setRecipeID(id);
       setRecipeIDtitle(title)
       setRecipeIDimage(image)
-    console.log(recipeID)
+    // console.log(recipeID)
   };
   useEffect(()=>{
-console.log(recipeID)
+// console.log(recipeID)
   },[recipeID])
   // setRecipeID(id);
   return (
