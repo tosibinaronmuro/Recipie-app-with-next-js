@@ -41,9 +41,9 @@ function Login() {
         setisLoggedin(true);
         setCurrentUser(result.user.displayName );
         localStorage.setItem("loggedin", true);
-       
+        router.push("/Favorites");
       });
-      router.push("/");
+     
     } catch (err) {
       console.log(err);
       // seterror(err);

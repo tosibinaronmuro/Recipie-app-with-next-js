@@ -67,6 +67,13 @@ export const Navigation = () => {
                 </a>
               </Link>
             )}
+            {currentUser && (
+              <Link href="/Favorites">
+                <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-secondary hover:text-primary font-bold items-center justify-center  ">
+                  Favorites
+                </a>
+              </Link>
+            )}
 
             <Link href="/Signup">
               <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-secondary hover:text-primary font-bold items-center justify-center  ">

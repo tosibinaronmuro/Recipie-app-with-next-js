@@ -8,7 +8,7 @@ function DisplayResults({ searchResults, recipeData }) {
     // getting the global state
     const { recipeID, setRecipeID,recipeIDimage, setRecipeIDimage,recipeIDtitle, setRecipeIDtitle } = useAuth();
   const { searchrender, setsearchrender } = useAuth();
-  console.log(recipeData);
+  // console.log(recipeData);
   return (
     <div className="lg:p-5">
       <p className="flex justify-center items-center text-2xl font-frank mb-3 ">

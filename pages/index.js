@@ -13,7 +13,7 @@ import Modal from "../Component/Modal";
  const API_KEY="0ef6a2baae594f999fcb22462fe8a649"
 const API_KEY2='084e61d247474b97976610933c49ceca' 
 
-  const URL= `https://api.spoonacular.com/recipes/complexSearch?query=chicken&number=20&apiKey=${API_KEY}`
+  const URL= `https://api.spoonacular.com/recipes/complexSearch?query=chicken&number=20&apiKey=${API_KEY2}`
 export async function getStaticProps(context) {
  const response= await axios.get(URL)
 //  console.log(response.data.results)

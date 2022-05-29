@@ -8,14 +8,16 @@ function RecipeItem() {
   const { recipeID, setRecipeID,setsearchrender,recipeIDimage, setRecipeIDimage,recipeIDtitle, setRecipeIDtitle} = useAuth();
   const [data, setdata] = useState();
   const [stepsdata, setstepsdata] = useState();
+  const [similardata, setsimilardata] = useState();
   const [loading, setloading] = useState(true);
   const [favorites, setfavorites] = useState(false);
   setsearchrender(false)
   useEffect(() => {
     const API_KEY = "0ef6a2baae594f999fcb22462fe8a649";
     const API_KEY2='084e61d247474b97976610933c49ceca' 
-    const URL = `https://api.spoonacular.com/recipes/${recipeID}/ingredientWidget.json?apiKey=${API_KEY}`;
-   const STEPSURL=`https://api.spoonacular.com/recipes/${recipeID}/analyzedInstructions?apiKey=${API_KEY}`
+    const URL = `https://api.spoonacular.com/recipes/${recipeID}/ingredientWidget.json?apiKey=${API_KEY2}`;
+   const STEPSURL=`https://api.spoonacular.com/recipes/${recipeID}/analyzedInstructions?apiKey=${API_KEY2}`;
+  //  const similarURl=`https://api.spoonacular.com/recipes/${recipeID}/similar?apiKey=${API_KEY2}`
   
   
 
@@ -23,21 +25,23 @@ function RecipeItem() {
       try {
         const response = await axios.get(URL);
         const stepsres=await axios.get(STEPSURL)
+        // const similares=await axios.get(similarURl)
         loading
         const recipe = response.data.results;
         setdata(response.data.ingredients);
         setstepsdata(stepsres.data)
+        // setsimilardata(similares.data)
         setloading(false)
         // stepsres.data[0].steps[2].step
-        console.log(
-          `recipe=${ stepsdata[0]  } `
-        );
+        // console.log(
+        //   `recipe=${ similardata[0]  } `
+        // );
       } catch (error) {
         console.log(error);
       }
     }
     fetchData();
-  }, [recipeID,loading,stepsdata]);
+  }, [recipeID,loading,stepsdata, ]);
   const handleClick = () => {
      setfavorites(true)
     // setRecipeID(id);
@@ -87,7 +91,11 @@ function RecipeItem() {
         </button>
       </div>
       {!loading && <RecipeItemData data={data} stepdata={stepsdata[0]} image={recipeIDimage} />}
+      {/* similar */}
     
+    <div>
+
+    </div>
     </div>
   );
 }
