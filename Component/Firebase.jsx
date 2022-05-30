@@ -1,7 +1,7 @@
 import {initializeApp} from 'firebase/app'
 import { getAuth, createUserWithEmailAndPassword,GoogleAuthProvider  } from "firebase/auth"
  
- 
+import { getFirestore,collection } from "firebase/firestore";
  
 
 
@@ -17,5 +17,7 @@ const Firebase =initializeApp( {
 
 
 export const auth= getAuth(Firebase)
+export const database = getFirestore(Firebase);
+export const RecipeCollection=collection(database,'favorites')
 export const provider=new GoogleAuthProvider()
 export default Firebase ;

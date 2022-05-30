@@ -13,20 +13,20 @@ import Modal from "../Component/Modal";
  const API_KEY="0ef6a2baae594f999fcb22462fe8a649"
 const API_KEY2='084e61d247474b97976610933c49ceca' 
 
-  const URL= `https://api.spoonacular.com/recipes/complexSearch?query=chicken&number=20&apiKey=${API_KEY2}`
-export async function getStaticProps(context) {
- const response= await axios.get(URL)
-//  console.log(response.data.results)
+  const URL= `https://api.spoonacular.com/recipes/complexSearch?query=chicken&number=20&apiKey=${API_KEY}`
+// export async function getStaticProps(context) {
+//  const response= await axios.get(URL)
+// //  console.log(response.data.results)
 
- return{
-   props:{
+//  return{
+//    props:{
 
- responses:response.data.results
+//  responses:response.data.results
 
-   }
- }
+//    }
+//  }
 
-}
+// }
 
 export default function Home({ responses }) {
   const router = useRouter();
@@ -142,7 +142,7 @@ export default function Home({ responses }) {
               Explore
             </p>
             <div className=" pt-3 lg:p-5 rounded-lg flex flex-wrap justify-center bg-white">
-              {responses.map((item) => {
+              {/* {responses.map((item) => {
           return (
             <Link key={item.id} href={'/RecipeItem'}><ul  onClick={()=>{setRecipeID(item.id); setRecipeIDtitle(item.title);
               setRecipeIDimage(item.image)}} >
@@ -150,7 +150,7 @@ export default function Home({ responses }) {
               </ul></Link>
           // <FoodCard id={item.id} image={item.image} title={item.title} />
           );
-        })}
+        })} */}
             </div>
           </div>
           <Modal/>
