@@ -37,22 +37,26 @@ function Results() {
 
   // search button submit
   const handleSubmit = (e) => {
+ 
     e.preventDefault();
     setsearchrender(true);
     setSearch(searchref.current.value);
     searchref.current.value = "";
+ 
   };
   useEffect(() => {
     const API_KEY = "0ef6a2baae594f999fcb22462fe8a649";
     const API_KEY2='084e61d247474b97976610933c49ceca' 
     const API_KEY3='09213b3260cc4d34a3817eb64481da1f'
-    const URL = `https://api.spoonacular.com/recipes/complexSearch?query=${search}&number=${number}&offset=${offset}&apiKey=${API_KEY3}`;
+    const API_KEY4='5403102d887f41b098fccc4eb096c77e'
+
+    const URL = `https://api.spoonacular.com/recipes/complexSearch?query=${search}&number=${number}&offset=${offset}&apiKey=${API_KEY}`;
 
     async function fetchData() {
       try {
         loading
         const response = await axios.get(URL);
-        const recipe = response.data.results;
+        var recipe = response.data.results;
         setdata(recipe);
         setloading(false)
       } catch (error) {
@@ -62,6 +66,7 @@ function Results() {
 
     fetchData();
   }, [search,offset,number,loading]);
+
 
   // protected routes
   // useEffect(() => {

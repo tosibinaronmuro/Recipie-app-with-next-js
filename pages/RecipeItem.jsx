@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { doc, documentId, getFirestore, setDoc } from "firebase/firestore";
+import { doc, documentId, getFirestore, setDoc,getDoc } from "firebase/firestore";
 import { database, RecipeCollection } from "../Component/Firebase";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc,arrayUnion, arrayRemove,updateDoc } from "firebase/firestore";
 import { useAuth } from "../Component/Layout";
 import axios from "axios";
 import RecipeItemData from "../Component/RecipeItemData";
@@ -30,8 +30,9 @@ function RecipeItem() {
     const API_KEY = "0ef6a2baae594f999fcb22462fe8a649";
     const API_KEY2 = "084e61d247474b97976610933c49ceca";
     const API_KEY3 = "09213b3260cc4d34a3817eb64481da1f";
-    const URL = `https://api.spoonacular.com/recipes/${recipeID}/ingredientWidget.json?apiKey=${API_KEY3}`;
-    const STEPSURL = `https://api.spoonacular.com/recipes/${recipeID}/analyzedInstructions?apiKey=${API_KEY3}`;
+    const API_KEY4='5403102d887f41b098fccc4eb096c77e'
+    const URL = `https://api.spoonacular.com/recipes/${recipeID}/ingredientWidget.json?apiKey=${API_KEY}`;
+    const STEPSURL = `https://api.spoonacular.com/recipes/${recipeID}/analyzedInstructions?apiKey=${API_KEY}`;
     //  const similarURl=`https://api.spoonacular.com/recipes/${recipeID}/similar?apiKey=${API_KEY2}`
 
     async function fetchData() {
@@ -54,23 +55,27 @@ function RecipeItem() {
       }
     }
     fetchData();
-  }, [recipeID, loading, stepsdata]);
+  }, [recipeID, loading]);
 
   // HANDLECLICK
   const handleClick = async () => {
     setfavorites(true);
-    const docRef = doc(database, "favorites",currentUser?.email);
+    const docRef = doc(database, "favorites", currentUser?.email);
     const recipe = {
-      user: currentUser?.email,
-      recipeID,
-      recipeIDtitle,
-      recipeIDimage,
+      recipeData: [
+        // { user: currentUser?.email, recipeID, recipeIDtitle, recipeIDimage },
+      ],
     };
+    // 
     // firebase database
     try {
-      await setDoc(docRef,recipe);
+      if(favorites){
+        
+      }
+      await setDoc(docRef, recipe,{ merge: true });
+      await  updateDoc(docRef, {recipe:arrayUnion({user: currentUser?.email, recipeID, recipeIDtitle, recipeIDimage})} );
     } catch (e) {
-      console.log(e)
+      console.log(e);
     }
   };
   return (
