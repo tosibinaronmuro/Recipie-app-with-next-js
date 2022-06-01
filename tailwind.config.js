@@ -1,7 +1,7 @@
 module.exports = {
   content: [
     "../recipe/pages/**/*.{js,ts,jsx,tsx}",
-    "../recipe/Components/**/*.{js,ts,jsx,tsx}",
+    "../recipe/components/**/*.{js,ts,jsx,tsx}",
     "./.next/**/*"
   ],
   theme: {
