@@ -27,17 +27,17 @@ function Favorites() {
 
    }
    retrieve()
-  },[])
+  },[currentUser?.email])
   
  
   return (
-    <div className='flex flex-col min-h-screen bg-last'>
+    <div className='  min-h-screen h-auto bg-last'>
      <div> <p className='flex justify-center pt-5 text-secondary font-rubik text-2xl'>Your Favorites Recipes here</p> </div>
-     <div >
+     <div className='flex  h-auto flex-wrap m-auto '>
        {data?.map((item)=>{
           
          return(
-           <ul className='flex flex-wrap'>
+           <ul key={item.id.mapValue.fields.recipeID.integerValue} >
              <FavoritesItem title={item} image={item} id={item}  />
            </ul>
          )
