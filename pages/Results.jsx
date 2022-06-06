@@ -24,7 +24,7 @@ function Results() {
     setNmber1((prev) => prev + 10);
      setNmber2((prev) => prev + 10);
     setoffset((prev) => prev + 10);
-    console.log(number, offset);
+   
   };
 // 
   // decrease pagination number
@@ -32,7 +32,7 @@ function Results() {
     setNmber1((prev) => prev - 10);
     setNmber2((prev) => prev - 10);
     setoffset((prev) => prev - 10);
-    console.log(number, offset);
+    
   };
 
   // search button submit

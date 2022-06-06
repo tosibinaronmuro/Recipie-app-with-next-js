@@ -14,12 +14,12 @@ function FoodCard({ image, title, id }) {
       setRecipeID(id);
       setRecipeIDtitle(title)
       setRecipeIDimage(image)
-    // console.log(recipeID)
+    
   };
   useEffect(()=>{
-// console.log(recipeID)
+ 
   },[recipeID])
-  // setRecipeID(id);
+   
   return (
     <div className="bg-last w-44 lg:w-80 lg:h-96 h-auto m-1   rounded lg:rounded-lg ">
       <div className="p-3 flex justify-between">

@@ -5,6 +5,7 @@ import { collection, addDoc,arrayUnion, arrayRemove,updateDoc } from "firebase/f
 import { useAuth } from "../Component/Layout";
 import axios from "axios";
 import RecipeItemData from "../Component/RecipeItemData";
+import Head from "next/head";
 
 function RecipeItem() {
   const {
@@ -39,16 +40,14 @@ function RecipeItem() {
       try {
         const response = await axios.get(URL);
         const stepsres = await axios.get(STEPSURL);
-        // const similares=await axios.get(similarURl)
+         
         loading;
         const recipe = response.data.results;
         setdata(response.data.ingredients);
         setstepsdata(stepsres.data);
-        // setsimilardata(similares.data)
+         
         setloading(false);
-        // stepsres.data[0].steps[2].step
-        // console.log(
-        //   `recipe=${ similardata[0]  } `
+     
         // );
       } catch (error) {
         console.log(error);
@@ -79,6 +78,11 @@ function RecipeItem() {
     }
   };
   return (
+    <>
+    <Head>
+      <title>{"Tosiron's recipe | RecipeItem"}</title>
+      <meta name="keywords" content="Tosiron" />
+    </Head>
     <div className="bg-last pb-3 min-h-screen">
       <div className="flex justify-evenly pt-3 ">
         <p className="font-frank rounded flex justify-center pl-3 p-1 text-secondary text-xl lg:text-3xl   ">
@@ -133,6 +137,8 @@ function RecipeItem() {
 
       <div></div>
     </div>
+
+</>
   );
 }
 

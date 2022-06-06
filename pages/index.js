@@ -16,7 +16,7 @@ const API_KEY2 = "084e61d247474b97976610933c49ceca";
 const URL = `https://api.spoonacular.com/recipes/complexSearch?query=chicken&number=20&apiKey=${API_KEY2}`;
 export async function getStaticProps(context) {
   const response = await axios.get(URL);
-  //  console.log(response.data.results)
+  
 
   return {
     props: {

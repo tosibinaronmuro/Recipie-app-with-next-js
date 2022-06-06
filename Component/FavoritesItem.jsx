@@ -1,11 +1,25 @@
 import React, { useState,useEffect } from "react";
 import { useAuth } from "../Component/Layout";
+import { database, RecipeCollection } from "../Component/Firebase";
 import Link from 'next/link';
 // import { useAuth } from "../Component/Layout";
+import { doc, updateDoc, arrayUnion, arrayRemove } from "firebase/firestore";
 
 function FavoritesItem({image, title, id,desc }) {
-  const{ currentUser,recipeID,setRecipeID
+  const{ currentUser,recipeID,setRecipeID,recipeIDtitle,
+    setRecipeIDtitle,
+    recipeIDimage,
+    setRecipeIDimage,
   } = useAuth();
+
+  // const handleDelete=async ()=>{
+  //   setRecipeID(id)
+  //   setRecipeIDimage(image)
+  //   setRecipeIDtitle(title)
+  //   const docRef = doc(database, "favorites", currentUser?.uid);
+  //   await updateDoc(docRef, {recipe:arrayRemove( {user: currentUser?.email, recipeID, recipeIDtitle, recipeIDimage})} );
+ 
+  // }
   function handleCLick(){
     // setRecipeID(id.mapValue.fields.recipeID.integerValue)
       }
@@ -17,7 +31,9 @@ function FavoritesItem({image, title, id,desc }) {
         <h5 className="mb-2 text-2xl font-bold tracking-tight   ">  {title}</h5>
          
     </div>
+    
 </div></Link>
+{/* <div onClick={handleDelete}>hello</div> */}
 </div>
   )
 }

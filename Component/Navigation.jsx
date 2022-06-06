@@ -75,16 +75,16 @@ export const Navigation = () => {
               </Link>
             )}
 
-            <Link href="/Signup">
+           {!currentUser && ( <Link href="/Signup">
               <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-secondary hover:text-primary font-bold items-center justify-center  ">
                 Sign-up
               </a>
-            </Link>
-            <Link href="/Login">
+            </Link>)}
+            {!currentUser && ( <Link href="/Login">
               <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-secondary hover:text-primary font-bold items-center justify-center  ">
                 Login
               </a>
-            </Link>
+            </Link>)}
             {currentUser && (
               <button
                 onClick={async () => {

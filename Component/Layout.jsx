@@ -48,12 +48,7 @@ function Layout({ children }) {
   }
 
   useEffect(() => {
-    // const unsubscribe=  onAuthStateChanged(auth,user=>{
-    //    setCurrentUser(user)
-    //         console.log('user state changed',user)
-    //       setLoading(false)
-
-    //    })
+   
 
     const unsubscribe = auth.onAuthStateChanged((user) => {
       setCurrentUser(user);
