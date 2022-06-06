@@ -75,10 +75,10 @@ export default function Home({ responses }) {
             }}
           >
             <div className="flex flex-col">
-              <h1 className="flex justify-center text-secondary text-3xl font-extrabold font-frank">
+              <h1 className="flex justify-center text-black text-3xl font-extrabold font-frank">
                 Food <span className="text-primary">RECIPES</span>
               </h1>
-              <h2 className="flex justify-center text-tertiary text-lg lg:text-2xl font-extralight font-rubik">
+              <h2 className="flex justify-center text-black text-lg lg:text-2xl font-extralight font-rubik">
                 EXPLORE RECIPIES AND OTHER INGREDIENTS
               </h2>
             </div>

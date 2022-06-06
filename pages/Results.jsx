@@ -50,7 +50,7 @@ function Results() {
     const API_KEY3='09213b3260cc4d34a3817eb64481da1f'
     const API_KEY4='5403102d887f41b098fccc4eb096c77e'
 
-    const URL = `https://api.spoonacular.com/recipes/complexSearch?query=${search}&number=${number}&offset=${offset}&apiKey=${API_KEY}`;
+    const URL = `https://api.spoonacular.com/recipes/complexSearch?query=${search}&number=${number}&offset=${offset}&apiKey=${API_KEY4}`;
 
     async function fetchData() {
       try {
@@ -63,8 +63,7 @@ function Results() {
         console.log(error);
       }
     }
-
-    fetchData();
+     fetchData();
   }, [search,offset,number,loading]);
 
 

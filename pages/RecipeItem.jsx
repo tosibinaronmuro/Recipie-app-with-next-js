@@ -32,8 +32,8 @@ function RecipeItem() {
     const API_KEY2 = "084e61d247474b97976610933c49ceca";
     const API_KEY3 = "09213b3260cc4d34a3817eb64481da1f";
     const API_KEY4='5403102d887f41b098fccc4eb096c77e'
-    const URL = `https://api.spoonacular.com/recipes/${recipeID}/ingredientWidget.json?apiKey=${API_KEY2}`;
-    const STEPSURL = `https://api.spoonacular.com/recipes/${recipeID}/analyzedInstructions?apiKey=${API_KEY2}`;
+    const URL = `https://api.spoonacular.com/recipes/${recipeID}/ingredientWidget.json?apiKey=${API_KEY3}`;
+    const STEPSURL = `https://api.spoonacular.com/recipes/${recipeID}/analyzedInstructions?apiKey=${API_KEY3}`;
     //  const similarURl=`https://api.spoonacular.com/recipes/${recipeID}/similar?apiKey=${API_KEY2}`
 
     async function fetchData() {
