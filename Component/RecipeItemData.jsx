@@ -1,6 +1,9 @@
 import React from 'react'
+import {useAuth} from '../Component/Layout'
 
 function RecipeItemData({data,stepdata,image}) {
+  const {recipeID}=useAuth();
+  
   return (
       <>
      <div className=" pt-3 lg:p-5 m-5 lg:m-14 rounded-lg flex flex-col lg:flex-row justify-center border-tertiary shadow-lg bg-white">
@@ -18,11 +21,12 @@ function RecipeItemData({data,stepdata,image}) {
             <hr />
             <div>
             <div>
-       {data.map((item)=>{
+       {data.map((item,number)=>{
          return(
-           <div className="flex justify-between font-rubik text-secondary m-2">
+
+           <ul key={number} className="flex justify-between font-rubik text-secondary m-2">
              <p>{item.name.toUpperCase()}</p> <span className='font-bold'>{item.amount.metric.value}{item.amount.metric.unit}</span>
-           </div>
+           </ul>
          )
        })}
      </div>
@@ -37,11 +41,11 @@ function RecipeItemData({data,stepdata,image}) {
             <hr />
             <div>
             <div>
-       {stepdata.steps.map((item)=>{
+       {stepdata.steps.map((item, index)=>{
          return(
-           <div className="flex   font-rubik text-secondary m-2">
+           <ul key={index} className="flex   font-rubik text-secondary m-2">
             <span className='m-1'>{item.number}</span> <p className='m-1'>{item.step}</p> 
-           </div>
+           </ul>
          )
        })}
      </div>

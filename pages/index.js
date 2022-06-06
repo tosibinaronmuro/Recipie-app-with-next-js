@@ -1,5 +1,5 @@
 import Head from "next/head";
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import axios from "axios";
@@ -10,46 +10,54 @@ import FoodCard from "../Component/FoodCard";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 import Modal from "../Component/Modal";
- const API_KEY="0ef6a2baae594f999fcb22462fe8a649"
-const API_KEY2='084e61d247474b97976610933c49ceca' 
+const API_KEY = "0ef6a2baae594f999fcb22462fe8a649";
+const API_KEY2 = "084e61d247474b97976610933c49ceca";
 
-  const URL= `https://api.spoonacular.com/recipes/complexSearch?query=chicken&number=20&apiKey=${API_KEY}`
+const URL = `https://api.spoonacular.com/recipes/complexSearch?query=chicken&number=20&apiKey=${API_KEY2}`;
 export async function getStaticProps(context) {
- const response= await axios.get(URL)
-//  console.log(response.data.results)
+  const response = await axios.get(URL);
+  //  console.log(response.data.results)
 
- return{
-   props:{
-
- responses:response.data.results
-
-   }
- }
-
+  return {
+    props: {
+      responses: response.data.results,
+    },
+  };
 }
 
 export default function Home({ responses }) {
   const router = useRouter();
   const searchref = useRef(null);
-  
-  const { searchrender, setShowModal,setRecipeID,recipeID,setsearchrender, search, setSearch,recipeIDimage, setRecipeIDimage,recipeIDtitle, setRecipeIDtitle,currentUser } = useAuth();
+
+  const {
+    searchrender,
+    setShowModal,
+    setRecipeID,
+    recipeID,
+    setsearchrender,
+    search,
+    setSearch,
+    recipeIDimage,
+    setRecipeIDimage,
+    recipeIDtitle,
+    setRecipeIDtitle,
+    currentUser,
+  } = useAuth();
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     setSearch(searchref.current.value);
     searchref.current.value = "";
-    setsearchrender(true)
-      // setTimeout(() => {
-      //   setsearchrender(true)     ;},2000)
+    setsearchrender(true);
+    // setTimeout(() => {
+    //   setsearchrender(true)     ;},2000)
     // ;
- 
-   if(currentUser){ 
-      router.push("/Results")
-     
-    
-   }else{
-    setShowModal(true)
-   }
+
+    if (currentUser) {
+      router.push("/Results");
+    } else {
+      setShowModal(true);
+    }
   };
   return (
     <div className="bg-last">
@@ -109,9 +117,7 @@ export default function Home({ responses }) {
 
                 <button
                   onClick={() => {
-                  
-                    handleSubmit
-                     
+                    handleSubmit;
                   }}
                   type="submit"
                   className="p-2.5 ml-2 text-sm font-medium text-white bg-primary rounded-full border border-primary hover:bg-primary focus:ring-4 focus:outline-none focus:ring-primary hover:shadow-xl "
@@ -143,17 +149,28 @@ export default function Home({ responses }) {
             </p>
             <div className=" pt-3 lg:p-5 rounded-lg flex flex-wrap justify-center bg-white">
               {responses.map((item) => {
-          return (
-            <Link key={item.id} href={'/RecipeItem'}><ul  onClick={()=>{setRecipeID(item.id); setRecipeIDtitle(item.title);
-              setRecipeIDimage(item.image)}} >
-                <FoodCard id={item.id} image={item.image} title={item.title} />
-              </ul></Link>
-          // <FoodCard id={item.id} image={item.image} title={item.title} />
-          );
-        })}
+                return (
+                  <Link key={item.id} href={"/RecipeItem"}>
+                    <ul
+                      onClick={() => {
+                        setRecipeID(item.id);
+                        setRecipeIDtitle(item.title);
+                        setRecipeIDimage(item.image);
+                      }}
+                    >
+                      <FoodCard
+                        id={item.id}
+                        image={item.image}
+                        title={item.title}
+                      />
+                    </ul>
+                  </Link>
+                  // <FoodCard id={item.id} image={item.image} title={item.title} />
+                );
+              })}
             </div>
           </div>
-          <Modal/>
+          <Modal />
         </div>
       </div>
     </div>
