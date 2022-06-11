@@ -13,7 +13,7 @@ export const Navigation = () => {
 
   return (
     <>
-      <nav className="flex items-center font-rubik flex-wrap bg-primary  p-3 ">
+      <nav className="flex items-center font-rubik flex-wrap   p-3 ">
         <Link href="/">
           <a className="inline-flex items-center p-2 mr-4 ">
             <svg
