@@ -9,7 +9,7 @@ function Footer() {
           <a className="flex items-center">
             <Image width={"30px"} height={"30px"} src="/logo.png" alt="" />
             <span className="self-center text-2xl font-semibold whitespace-nowrap  ">
-              Tosiron
+              FlavorFusion
             </span>
           </a>
         </div>
