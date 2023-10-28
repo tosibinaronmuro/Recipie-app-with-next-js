@@ -2,6 +2,7 @@ module.exports = {
   content: [
     "../recipe/pages/**/*.{js,ts,jsx,tsx}",
     "../recipe/components/**/*.{js,ts,jsx,tsx}",
+    "../Component/**/*.{js,ts,jsx,tsx}",
     "../recipe/Component/**/*.{js,ts,jsx,tsx}",
     "./.next/**/*"
   ],
